@@ -40,6 +40,7 @@ function WaitlistForm({ id, buttonText }: { id: string; buttonText?: string }) {
           type="email"
           placeholder="your@email.com"
           required
+          aria-label="Email address"
           value={email}
           onChange={(e) => { setEmail(e.target.value); setStatus("idle"); }}
         />
@@ -68,8 +69,16 @@ function useWaitlistCount() {
 /* ── Interactive Phone Check Item ─────────────────────── */
 function CheckItem({ emoji, label, defaultChecked }: { emoji: string; label: string; defaultChecked?: boolean }) {
   const [checked, setChecked] = useState(defaultChecked ?? false);
+  const toggle = () => setChecked(!checked);
   return (
-    <div className={`check-item${checked ? " checked" : ""}`} onClick={() => setChecked(!checked)}>
+    <div
+      className={`check-item${checked ? " checked" : ""}`}
+      onClick={toggle}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } }}
+      aria-pressed={checked}
+    >
       <div className="checkbox" />
       <span className="item-emoji">{emoji}</span>
       <span className="item-label">{label}</span>
@@ -221,13 +230,13 @@ export default function HomePage() {
 
           <div className="bento-col">
             <div className="bento-grid">
-              <div className="bento-card bento-large reveal-on-scroll">
-                <div className="bento-emoji">{"\uD83D\uDCE1"}</div>
+              <div className="bento-card bento-large reveal-on-scroll" aria-label="Auto-trigger: checklist appears when you leave WiFi">
+                <div className="bento-emoji" aria-hidden="true">{"\uD83D\uDCE1"}</div>
                 <div className="bento-title">Auto-trigger</div>
                 <p className="bento-desc">Leave your WiFi &rarr; checklist appears. No buttons, no alarms, no effort. It just knows.</p>
               </div>
-              <div className="bento-card bento-tall reveal-on-scroll">
-                <div className="bento-emoji">{"\uD83D\uDD25"}</div>
+              <div className="bento-card bento-tall reveal-on-scroll" aria-label="Streaks: track your daily checklist completion">
+                <div className="bento-emoji" aria-hidden="true">{"\uD83D\uDD25"}</div>
                 <div className="bento-title">Streaks</div>
                 <p className="bento-desc">Duolingo energy but for not forgetting your keys. Watch the number go up.</p>
                 <div className="bento-streak-demo">
@@ -235,18 +244,18 @@ export default function HomePage() {
                   <span className="bento-streak-label">day streak</span>
                 </div>
               </div>
-              <div className="bento-card reveal-on-scroll">
-                <div className="bento-emoji">{"\uD83D\uDD50"}</div>
+              <div className="bento-card reveal-on-scroll" aria-label="Context-aware: different lists for different occasions">
+                <div className="bento-emoji" aria-hidden="true">{"\uD83D\uDD50"}</div>
                 <div className="bento-title">Context-aware</div>
                 <p className="bento-desc">Work mornings ≠ gym nights. Different lists for different vibes.</p>
               </div>
-              <div className="bento-card reveal-on-scroll">
-                <div className="bento-emoji">{"\uD83E\uDD1D"}</div>
+              <div className="bento-card reveal-on-scroll" aria-label="Accountability: share your streak with others">
+                <div className="bento-emoji" aria-hidden="true">{"\uD83E\uDD1D"}</div>
                 <div className="bento-title">Accountability</div>
                 <p className="bento-desc">Share your streak. They get pinged if you skip.</p>
               </div>
-              <div className="bento-card bento-wide reveal-on-scroll">
-                <div className="bento-emoji">{"\u231A"}</div>
+              <div className="bento-card bento-wide reveal-on-scroll" aria-label="Widgets everywhere: lock screen, home screen, and Apple Watch">
+                <div className="bento-emoji" aria-hidden="true">{"\u231A"}</div>
                 <div className="bento-title">Widgets everywhere</div>
                 <p className="bento-desc">Lock screen. Home screen. Apple Watch. Check off without even unlocking your phone.</p>
               </div>
@@ -393,9 +402,12 @@ export default function HomePage() {
           </h2>
           <div className="progress-wrap">
             <div className="progress-bar">
-              <div className="progress-fill" />
+              <div
+                className="progress-fill"
+                style={{ width: waitlistCount ? `${Math.min((waitlistCount / 2500) * 100, 100)}%` : "0%" }}
+              />
             </div>
-            <p className="progress-label">
+            <p className="progress-label" style={{ minWidth: 260 }}>
               {waitlistCount ? `${waitlistCount.toLocaleString()} joined` : "Spots filling up"} &mdash; opening beta to the first 2,500
             </p>
           </div>
@@ -407,7 +419,7 @@ export default function HomePage() {
       {/* ── STICKY CTA BAR ───────────────────────────── */}
       <div className={`sticky-cta-bar${showSticky ? " visible" : ""}`}>
         <div className="sticky-cta-inner">
-          <span className="sticky-cta-text">
+          <span className="sticky-cta-text" style={{ minWidth: 200 }}>
             {"\uD83D\uDD25"} {waitlistCount ? `${waitlistCount.toLocaleString()} people waiting` : "Join the waitlist"}
           </span>
           <a href="#waitlist" className="sticky-cta-btn">Join Waitlist</a>
