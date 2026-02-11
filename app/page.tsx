@@ -149,7 +149,7 @@ export default function HomePage() {
         <div className="nav-inner">
           <a href="#" className="logo">
             <div className="logo-icon">{"\u2713"}</div>
-            <span className="logo-text">DoorCheck</span>
+            <span className="logo-text">Ubett</span>
           </a>
           <a href="#waitlist" className="nav-cta">Join Waitlist</a>
         </div>
@@ -166,7 +166,7 @@ export default function HomePage() {
           again, <span className="highlight">didn&rsquo;t you.</span>
         </h1>
         <p className="hero-sub anim-fade-up delay-3">
-          Not a question. A fact. DoorCheck auto-pops a checklist when you leave the house. 10 seconds. Done.
+          Not a question. A fact. Ubett auto-pops a checklist when you leave the house. 10 seconds. Done.
         </p>
         <div className="cta-group anim-fade-up delay-4">
           <WaitlistForm id="heroForm" />
@@ -190,7 +190,7 @@ export default function HomePage() {
             <div className="proof-divider" />
             <div className="proof-stat">
               <span className="proof-number">0</span>
-              <span className="proof-label">things you need to remember. DoorCheck remembers for you.</span>
+              <span className="proof-label">things you need to remember. Ubett remembers for you.</span>
             </div>
           </div>
         </div>
@@ -309,7 +309,7 @@ export default function HomePage() {
                 <span className="pain-emoji">{"\u2705"}</span>
                 <span className="pain-sub">the fix</span>
               </div>
-              <div className="pain-title">DoorCheck ends this in 10 seconds flat</div>
+              <div className="pain-title">Ubett ends this in 10 seconds flat</div>
               <p className="pain-desc">One notification. Quick taps. Everything confirmed. Walk out like you have your life together.</p>
             </div>
           </div>
@@ -388,7 +388,7 @@ export default function HomePage() {
         <div className="empathy-inner">
           <div className="section-label">real talk</div>
           <h3>You&rsquo;re not dumb.<br />Your brain just has too many tabs open.</h3>
-          <p>ADHD means your working memory is maxed out before you even reach the door. DoorCheck is the external hard drive for that one moment. Your brain handles everything else &mdash; we handle the exit.</p>
+          <p>ADHD means your working memory is maxed out before you even reach the door. Ubett is the external hard drive for that one moment. Your brain handles everything else &mdash; we handle the exit.</p>
           <a href="#waitlist" className="mini-cta">Join the waitlist &rarr;</a>
         </div>
       </section>
@@ -431,7 +431,7 @@ export default function HomePage() {
         <div className="footer-inner">
           <div className="footer-left">
             <div className="logo-icon" style={{ width: 28, height: 28, borderRadius: 8, fontSize: 14 }}>{"\u2713"}</div>
-            <span>DoorCheck &copy; 2026</span>
+            <span>Ubett &copy; 2026</span>
           </div>
           <div className="footer-links">
             <Link href="/privacy">Privacy</Link>

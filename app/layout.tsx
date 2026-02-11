@@ -14,19 +14,19 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://doorcheck.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ubett.app";
 
 export const metadata: Metadata = {
-  title: "DoorCheck — Never forget your keys again",
+  title: "Ubett — Never forget your keys again",
   description:
     "The 10-second departure checklist for ADHD brains. Auto-triggers when you leave. Phone, wallet, keys, meds — checked.",
   metadataBase: new URL(siteUrl),
   openGraph: {
-    title: "DoorCheck — Never forget your keys again",
+    title: "Ubett — Never forget your keys again",
     description:
       "The 10-second departure checklist for ADHD brains. Auto-triggers when you leave. Phone, wallet, keys, meds — checked.",
     url: siteUrl,
-    siteName: "DoorCheck",
+    siteName: "Ubett",
     locale: "en_US",
     type: "website",
     images: [
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "DoorCheck — the phone wallet keys app your brain needed",
+        alt: "Ubett — the phone wallet keys app your brain needed",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DoorCheck — Never forget your keys again",
+    title: "Ubett — Never forget your keys again",
     description:
       "The 10-second departure checklist for ADHD brains. Auto-triggers when you leave.",
     images: ["/og-image.png"],

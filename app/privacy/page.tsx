@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — DoorCheck",
-  description: "How DoorCheck handles your data. TL;DR: we collect very little and never sell it.",
+  title: "Privacy Policy — Ubett",
+  description: "How Ubett handles your data. TL;DR: we collect very little and never sell it.",
 };
 
 export default function PrivacyPage() {
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
 
       <h2>What We Collect</h2>
       <p>When you join the waitlist, we collect your <strong>email address</strong> and the date you signed up. That&rsquo;s it.</p>
-      <p>When you use the DoorCheck app (coming soon), we may collect:</p>
+      <p>When you use the Ubett app (coming soon), we may collect:</p>
       <ul>
         <li>Your checklist items (stored locally on your device)</li>
         <li>Streak and usage data (stored locally on your device)</li>
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
       <h2>How We Use Your Email</h2>
       <p>We use your email solely to:</p>
       <ul>
-        <li>Notify you when DoorCheck launches</li>
+        <li>Notify you when Ubett launches</li>
         <li>Send occasional product updates (you can unsubscribe anytime)</li>
       </ul>
 
@@ -45,13 +45,13 @@ export default function PrivacyPage() {
       <p>You can request deletion of your data at any time by emailing us. We&rsquo;ll remove it within 7 days.</p>
 
       <h2>Children&rsquo;s Privacy</h2>
-      <p>DoorCheck is not directed at children under 13. We do not knowingly collect data from children.</p>
+      <p>Ubett is not directed at children under 13. We do not knowingly collect data from children.</p>
 
       <h2>Changes</h2>
       <p>We may update this policy. If we make significant changes, we&rsquo;ll notify you via email.</p>
 
       <h2>Contact</h2>
-      <p>Questions? Email us at <a href="mailto:hello@doorcheck.app">hello@doorcheck.app</a>.</p>
+      <p>Questions? Email us at <a href="mailto:hello@ubett.app">hello@ubett.app</a>.</p>
     </div>
   );
 }
